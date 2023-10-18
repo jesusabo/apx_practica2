@@ -27,7 +27,7 @@ public class PNDFTC0101PETransaction extends AbstractPNDFTC0101PETransaction {
 		String edad = this.getEdad();
 		List<ResponseStudentDTO> estudianteDTOList = pndfRC01.executeGetStudent(grado,edad);
 		if(estudianteDTOList!=null){
-			this.setEstudiante(estudianteDTOList);
+			this.setEstudiantedto(estudianteDTOList);
 			this.setSeverity(Severity.OK);
 		} else {
 			this.setSeverity(Severity.ENR);
