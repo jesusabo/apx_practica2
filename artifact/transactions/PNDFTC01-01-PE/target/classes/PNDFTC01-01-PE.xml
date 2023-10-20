@@ -5,13 +5,14 @@
 		<parameter order="2" name="edad" mandatory="0" type="String" size="10"/>
 	</paramsIn>
 	<paramsOut>
-		<list order="1" name="estudiante" mandatory="1">
+		<list order="1" name="estudianteDto" mandatory="0">
 			<dto order="1" name="Type" mandatory="0" package="com.bbva.pndf.dto.student.ResponseStudentDTO" artifactId="PNDFC001">
-				<parameter order="1" name="fechaIngreso" mandatory="1" type="Date (YYYY-MM-DD)" size="0"/>
-				<parameter order="2" name="fechaSalida" mandatory="1" type="Date (YYYY-MM-DD)" size="0"/>
-				<parameter order="3" name="edad" mandatory="1" type="String" size="10"/>
-				<parameter order="4" name="grado" mandatory="1" type="String" size="10"/>
-				<parameter order="5" name="estado" mandatory="1" type="String" size="20"/>
+				<parameter order="1" name="fechaIngreso" mandatory="0" type="Date (YYYY-MM-DD)" size="0"/>
+				<parameter order="2" name="fechaSalida" mandatory="0" type="Date (YYYY-MM-DD)" size="0"/>
+				<parameter order="3" name="edad" mandatory="0" type="String" size="10"/>
+				<parameter order="4" name="grado" mandatory="0" type="String" size="10"/>
+				<parameter order="5" name="estado" mandatory="0" type="String" size="20"/>
+				<parameter order="6" name="id" mandatory="0" type="String" size="50"/>
 			</dto>
 		</list>
 	</paramsOut>
