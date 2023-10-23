@@ -64,59 +64,26 @@ public class PNDFRC01Test {
 	
  	@Test
 	public void executeTestNotNull(){
-		List<ResponseStudentDTO> dummyMap = new ArrayList<>();
-		//dummyMap.add(new ResponseStudentDTO());
-		String grado="grado";
-		String edad="edad";
-		Mockito.when(jdbcUtils.queryForList(Matchers.matches("pndf.select.estudiante"), Matchers.anyMap())).thenReturn(dummyMap);
-		dummyMap = this.pndfRC01Impl.executeGetStudent(grado,edad);
+		ResponseStudentDTO dummyMap;
+		String id="prueba";
+		Map<String, Object> request = new HashMap<>();
+		request.put("ID",id);
+		Mockito.when(jdbcUtils.queryForMap(Matchers.matches("pndf.select.estudiante"), Matchers.anyMap())).thenReturn(request);
+		dummyMap = this.pndfRC01Impl.executeGetStudent(id);
 		Assert.assertNotNull(dummyMap);
-		Assert.assertEquals(0, dummyMap.size());
+		Assert.assertEquals("prueba", dummyMap.getId());
 	}
 	@Test
 	public void executeTestNotNull2(){
-		List<ResponseStudentDTO> dummyMap = new ArrayList<>();
-		String grado="", edad="";
-		Mockito.when(jdbcUtils.queryForList(Matchers.matches("pndf.select.estudiante2"), Matchers.anyMap())).thenReturn(dummyMap);
-		dummyMap = this.pndfRC01Impl.executeGetStudent(grado,edad);
+		ResponseStudentDTO dummyMap;
+		String id="";
+		Map<String, Object> request = new HashMap<>();
+		request.put("ID",id);
+		Mockito.when(jdbcUtils.queryForMap(Matchers.matches("pndf.select.estudiante"), Matchers.anyMap())).thenReturn(new HashMap<>());
+		dummyMap = this.pndfRC01Impl.executeGetStudent(id);
 		Assert.assertNotNull(dummyMap);
-		Assert.assertEquals(0, dummyMap.size());
+		Assert.assertEquals("", dummyMap.getId());
 	}
 
-	@Test
-	public void executeTestNoResult(){
-		Mockito.when(jdbcUtils.queryForList(Matchers.matches("pndf.select.estudiante"), Matchers.anyMap())).thenThrow(new NoResultException("Error"));
-		List<ResponseStudentDTO> objMap = this.pndfRC01Impl.executeGetStudent("abc","abc");
-		Assert.assertNull(objMap);
-	}
 
-	@Test
-	public void executeTestNoResult2(){
-		Mockito.when(jdbcUtils.queryForList(Matchers.matches("pndf.select.estudiante2"), Matchers.anyMap())).thenThrow(new NoResultException("Error"));
-		List<ResponseStudentDTO> objMap = this.pndfRC01Impl.executeGetStudent("","");
-		Assert.assertNull(objMap);
-	}
-
-	@Test
-	public void executeTestMap(){
-		List<Map<String, Object>> datax = new ArrayList<>();
-		List<ResponseStudentDTO> responseStudentDTOList = this.pndfRC01Impl.fromMapData(datax);
-		Assert.assertNotNull(responseStudentDTOList);
-	}
-
-	@Test
-	public void executeTestMapNull(){
-		List<Map<String, Object>> datax = new ArrayList<>();
-		datax.add(null);
-		List<ResponseStudentDTO> responseStudentDTOList = this.pndfRC01Impl.fromMapData(datax);
-		Assert.assertNotNull(responseStudentDTOList);
-	}
-
-	@Test
-	public void executeTestFromMap2Success(){
-		Map<String, Object> objMap = new HashMap<>();
-		ResponseStudentDTO data = this.pndfRC01Impl.fromMapData2(objMap);
-		Assert.assertNotNull(data);
-		Assert.assertEquals(0, context.getAdviceList().size());
-	}
 }

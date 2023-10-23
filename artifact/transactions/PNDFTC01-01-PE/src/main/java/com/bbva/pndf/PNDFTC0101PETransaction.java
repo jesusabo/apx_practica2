@@ -24,19 +24,20 @@ public class PNDFTC0101PETransaction extends AbstractPNDFTC0101PETransaction {
 	public void execute() {
 		PNDFRC01 pndfRC01 = this.getServiceLibrary(PNDFRC01.class);
 		String id = this.getId();
-		ResponseStudentDTO responseStudentDTO = pndfRC01.executeGetStudent(id);
 		if(id!=null && !id.isEmpty()){
-			if(estudianteDTOList!=null){
+			ResponseStudentDTO responseStudentDTO = pndfRC01.executeGetStudent(id);
+			if(!responseStudentDTO.getId().isEmpty()){
 				this.setEstudiantedto(responseStudentDTO);
 				this.setSeverity( Severity.OK);
 				this.setHttpResponseCode(HttpResponseCode.HTTP_CODE_200);
-			}
-		}else{
+			} else {
+				this.setEstudiantedto(responseStudentDTO);
+				this.setSeverity( Severity.ENR);
 				this.setHttpResponseCode(HttpResponseCode.HTTP_CODE_400);
-				this.setSeverity(Severity.ENR);
 			}
+		} else{
+			this.setHttpResponseCode(HttpResponseCode.HTTP_CODE_400);
+			this.setSeverity(Severity.ENR);
 		}
-
 	}
-
 }

@@ -15,35 +15,28 @@ public class PNDFRC01Impl extends PNDFRC01Abstract {
 	private static final Logger LOGGER = LoggerFactory.getLogger(PNDFRC01Impl.class);
 
 	private static final String SELECT_ESTUDIANTE = "pndf.select.estudiante";
+	private static final String ID = "id";
 	private static final String ERR_NO_RESULTADOS = "Error";
 
 	@Override
-	public List<ResponseStudentDTO> executeGetStudent(String id) {
-
+	public ResponseStudentDTO executeGetStudent(String id) {
+		ResponseStudentDTO estudianteDTO;
 		LOGGER.info("[PNDFRC01-executeGetCodigo] entrada id: {} ",id);
-
-		Map<String, Object> objResponseSQL = null;
-
-		objResponseSQL = this.jdbcUtils.getQuery(SELECT_ESTUDIANTE, id);
-
-		if(objResponseSQL!=null){
-			estudianteDTOList = fromMapData(objResponseSQL);
-		}else{
+		Map<String, Object> request = new HashMap<>();
+		request.put(ID, id);
+		Map<String, Object> objResponseSQL = this.jdbcUtils.queryForMap(SELECT_ESTUDIANTE,request);
+		if(objResponseSQL.size()>0){
+			estudianteDTO = new ResponseStudentDTO((String) objResponseSQL.get("ID"),
+					(String) objResponseSQL.get("GRADO"),(String) objResponseSQL.get("ESTADO_MATRICULA"));
+		} else {
+			//Dado que no hay resultados devolvemos un objeto vacío
+			estudianteDTO = new ResponseStudentDTO("","","");
 			LOGGER.info("[PNDFRC01-executeGetCodigo] No existe el id: {}",id);
 			this.addAdvice(ERR_NO_RESULTADOS);
 		}
-
-		return estudianteDTOList;
+		return estudianteDTO;
 	}
 
-	public ResponseStudentDTO fromMapData(Map<String, Object> data) {
-		ResponseStudentDTO responseStudentDTO = new ResponseStudentDTO();
 
-		responseStudentDTO.setId((String) data.get("ID"));
-		responseStudentDTO.setGrado((String) data.get("GRADO"));
-		responseStudentDTO.setMatricula((String) data.get("ESTADO_MATRICULA"));
-
-		return responseStudentDTO;
-	}
 
 }

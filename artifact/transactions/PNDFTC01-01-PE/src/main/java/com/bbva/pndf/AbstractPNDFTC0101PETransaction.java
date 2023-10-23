@@ -2,7 +2,6 @@ package com.bbva.pndf;
 
 import com.bbva.elara.transaction.AbstractTransaction;
 import com.bbva.pndf.dto.student.ResponseStudentDTO;
-import java.util.List;
 
 /**
  * In this class, the input and output data is defined automatically through the setters and getters.
@@ -21,9 +20,9 @@ public abstract class AbstractPNDFTC0101PETransaction extends AbstractTransactio
 	}
 
 	/**
-	 * Set value for List<ResponseStudentDTO> output parameter estudianteDto
+	 * Set value for ResponseStudentDTO output parameter estudianteDTO
 	 */
 	protected void setEstudiantedto(final ResponseStudentDTO field){
-		this.setEstudiantedto("estudianteDto", field);
+		this.addParameter("estudianteDTO", field);
 	}
 }

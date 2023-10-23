@@ -14,7 +14,8 @@
 	<description>Estudiante DTO</description>
 	<properties>
 		<osgi.version.manifest>0.0</osgi.version.manifest>
-		<sonar.coverage.exclusions>/src/main/java/com/bbva/pimc/dto/domain/*.java</sonar.coverage.exclusions>
+		<sonar.coverage.exclusions>/src/main/java/com/bbva/pimc/dto/student/*.java</sonar.coverage.exclusions>
+
 	</properties>
 	<dependencies>
 		<dependency>
