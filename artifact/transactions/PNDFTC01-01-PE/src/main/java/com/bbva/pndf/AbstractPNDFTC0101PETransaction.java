@@ -14,23 +14,16 @@ public abstract class AbstractPNDFTC0101PETransaction extends AbstractTransactio
 
 
 	/**
-	 * Return value for input parameter grado
+	 * Return value for input parameter id
 	 */
-	protected String getGrado(){
-		return (String)this.getParameter("grado");
-	}
-
-	/**
-	 * Return value for input parameter edad
-	 */
-	protected String getEdad(){
-		return (String)this.getParameter("edad");
+	protected String getId(){
+		return (String)this.getParameter("id");
 	}
 
 	/**
 	 * Set value for List<ResponseStudentDTO> output parameter estudianteDto
 	 */
-	protected void setEstudiantedto(final List<ResponseStudentDTO> field){
-		this.addParameter("estudianteDto", field);
+	protected void setEstudiantedto(final ResponseStudentDTO field){
+		this.setEstudiantedto("estudianteDto", field);
 	}
 }

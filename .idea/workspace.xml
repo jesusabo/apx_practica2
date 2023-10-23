@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee50b29a-27e1-4eba-9da3-312211b24004" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artifact/dtos/PNDFC001/src/main/java/com/bbva/pndf/dto/student/ResponseStudentDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/artifact/dtos/PNDFC001/src/main/java/com/bbva/pndf/dto/student/ResponseStudentDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artifact/libraries/PNDFRC01/src/main/java/com/bbva/pndf/lib/rc01/PNDFRC01.java" beforeDir="false" afterPath="$PROJECT_DIR$/artifact/libraries/PNDFRC01/src/main/java/com/bbva/pndf/lib/rc01/PNDFRC01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artifact/libraries/PNDFRC01IMPL/src/main/java/com/bbva/pndf/lib/rc01/impl/PNDFRC01Impl.java" beforeDir="false" afterPath="$PROJECT_DIR$/artifact/libraries/PNDFRC01IMPL/src/main/java/com/bbva/pndf/lib/rc01/impl/PNDFRC01Impl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artifact/libraries/PNDFRC01IMPL/src/main/resources/sql-PNDFRC01IMPL.properties" beforeDir="false" afterPath="$PROJECT_DIR$/artifact/libraries/PNDFRC01IMPL/src/main/resources/sql-PNDFRC01IMPL.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artifact/transactions/PNDFTC01-01-PE/src/main/java/com/bbva/pndf/AbstractPNDFTC0101PETransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/artifact/transactions/PNDFTC01-01-PE/src/main/java/com/bbva/pndf/AbstractPNDFTC0101PETransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artifact/transactions/PNDFTC01-01-PE/src/main/java/com/bbva/pndf/PNDFTC0101PETransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/artifact/transactions/PNDFTC01-01-PE/src/main/java/com/bbva/pndf/PNDFTC0101PETransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artifact/transactions/PNDFTC01-01-PE/src/main/resources/PNDFTC01-01-PE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/artifact/transactions/PNDFTC01-01-PE/src/main/resources/PNDFTC01-01-PE.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +37,9 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/APX_proyectos/Practica2_Final_Camilo/eecc_search_2"
+    "git-widget-placeholder": "apx-practica3",
+    "last_opened_file_path": "D:/APX_proyectos/Proyecto_Base/Proyecto2/eecc_search",
+    "settings.editor.selected.configurable": "preferences.general"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -44,6 +52,10 @@
       <updated>1697582115330</updated>
     </task>
     <servers />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/eecc_search_2$PNDFTC0101PETransactionTest.ic" NAME="PNDFTC0101PETransactionTest Coverage Results" MODIFIED="1697657678041" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

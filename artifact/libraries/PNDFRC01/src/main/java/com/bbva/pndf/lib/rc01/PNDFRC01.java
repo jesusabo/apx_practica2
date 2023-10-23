@@ -12,6 +12,6 @@ public interface PNDFRC01 {
 	/**
 	 * The execute method...
 	 */
-	List<ResponseStudentDTO> executeGetStudent(String grado, String edad);
+	ResponseStudentDTO executeGetStudent(String id);
 
 }
